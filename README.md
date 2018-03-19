@@ -78,7 +78,8 @@ $.ajax({
 });
 ```
 
-4: Colorize final canvas
+4: Colorize image
+
 apply new colors to &lt;canvas&gt; for display purposes
 ```
 // img: source <img>
