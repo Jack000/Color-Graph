@@ -3,6 +3,9 @@
 A <em>color graph</em> is a color palette arranged in an undirected, weighted graph.
 see more info on this concept here: http://brandmark.io/color-wheel/discussion/
 
+<img src="http://brandmark.io/color-wheel/discussion/mondrian1.jpg" width="240" alt="Mondrian painting" /> -&gt; <img src="http://brandmark.io/color-wheel/discussion/mondrian-graph1.svg" width="240" alt="Mondrian color graph" />
+
+
 colorgraph.js takes an &lt;img&gt; and extracts its color graph. The result is a color palette and an adjacency matrix
 
 this library is meant for use on browsers, and requires the color quantization library [RgbQuant](https://github.com/leeoniya/RgbQuant.js/)
