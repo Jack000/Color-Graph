@@ -56,7 +56,7 @@ feel free to use my colorization API, free for non-commercial projects
 var data = {
     model: 'dribbble',
     quantized: { sizes: quantized.sizes, palette: quantized.palette, adjacency: adjacency },
-    invert: false,
+    invert: true,
     num: 1
 };
 
