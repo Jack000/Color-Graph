@@ -307,7 +307,7 @@ var colorgraph = (function(document, RgbQuant, max_width, max_height) {
         return can_out;
     }
 
-    // Reveal public methods
+    // public methods
     return {
         quantize: quantize,
         get_connectivity_matrix: get_connectivity_matrix,
