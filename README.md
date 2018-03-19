@@ -10,7 +10,7 @@ this library is meant for use on browsers, and requires the color quantization l
 
 usage:
 
-1: quantize an image
+<strong>1: quantize an image</strong>
 ```
 // img: html <img> element
 // num: number of colors to quantize into
@@ -27,7 +27,7 @@ quantized = colorgraph.quantize(img,num,use_mode)
 
 ```
 
-2: get color adjacency matrix (this is the node connectivity matrix that defines the graph)
+<strong>2: get color adjacency matrix</strong> (this is the node connectivity matrix that defines the graph)
 ```
 // palette: input RGB palette
 // canvas: canvas containing the image
@@ -43,7 +43,7 @@ adjacency = colorgraph.get_connectivity_matrix(quantized.palette, quantized.canv
 ]
 ```
 
-3: ColorWheel API (optional)
+<strong>3: ColorWheel API</strong> (optional)
 feel free to use my colorization API, free for non-commercial projects
 ```
 // model: 'dribbble', 'nes', 'soviet', 'anime', 'animation', 'pixelart', 'poster', 'painting'
@@ -78,7 +78,7 @@ $.ajax({
 });
 ```
 
-4: Colorize image
+<strong>4: Colorize image</strong>
 
 apply new colors to &lt;canvas&gt; for display purposes
 ```
