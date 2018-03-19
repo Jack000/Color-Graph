@@ -32,6 +32,7 @@ quantized = colorgraph.quantize(img,num,use_mode)
 // palette: input RGB palette
 // canvas: canvas containing the image
 // normalize: Boolean, normalize the adjacency matrix with respect to image perimeter size (for comparing the adjacency matrix of different sized images)
+
 adjacency = colorgraph.get_connectivity_matrix(quantized.palette, quantized.canvas, normalize)
 
 // row-major adjacency matrix (ith row = ith palette color)
@@ -40,4 +41,50 @@ adjacency = colorgraph.get_connectivity_matrix(quantized.palette, quantized.canv
 [...]
 [...]
 ]
+```
+
+3: ColorWheel API (optional)
+feel free to use my colorization API, free for non-commercial projects
+```
+// model: 'dribbble', 'nes', 'soviet', 'anime', 'animation', 'pixelart', 'poster', 'painting'
+// invert: if false, returned palette will be sorted by luminance
+// num: number of palettes to return
+
+var data = {
+    model: 'dribbble',
+    quantized: { sizes: quantized.sizes, palette: quantized.palette, adjacency: adjacency },
+    invert: false,
+    num: 1
+};
+
+// 0 <= hue <= 1
+if(hue >= 0){
+    data.hue = hue;
+}
+
+// 0 <= saturation <= 1
+if(saturation >= 0){
+    data.saturation = saturation;
+}
+
+$.ajax({
+  type: "POST",
+  url: 'http://brandmark.io/color-wheel/api/',
+  data: {input: JSON.stringify(data)},
+  success: function(results){
+        colorgraph.colorize(img, target_canvas, quantized, results[0]);
+  },
+  dataType: 'json'
+});
+```
+
+4: Colorize final canvas
+apply new colors to &lt;canvas&gt; for display purposes
+```
+// img: source <img>
+// canvas: <canvas> to draw to
+// quantized: quantized object from quantize()
+// palette: RGB palette to draw
+
+colorgraph.colorize(img, canvas, quantized, palette);
 ```
