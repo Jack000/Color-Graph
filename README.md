@@ -88,7 +88,7 @@ apply new colors to &lt;canvas&gt; for display purposes
 // img: source <img>
 // canvas: <canvas> to draw to
 // quantized: quantized object from quantize()
-// palette: RGB palette to draw
+// palette: new RGB palette to draw
 
 colorgraph.colorize(img, canvas, quantized, palette);
 ```
